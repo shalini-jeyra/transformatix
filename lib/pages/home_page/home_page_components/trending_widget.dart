@@ -3,40 +3,85 @@ import 'package:flutter/material.dart';
 import 'package:transformatix_task/styles/styles.dart';
 
 class TrendingWidget extends StatefulWidget {
-  const TrendingWidget({ Key? key }) : super(key: key);
+  const TrendingWidget({Key? key}) : super(key: key);
 
   @override
   State<TrendingWidget> createState() => _TrendingWidgetState();
 }
 
 class _TrendingWidgetState extends State<TrendingWidget> {
-    List<String> images=['assets/1.png','assets/2.png','assets/3.png','assets/4.png','assets/5.png','assets/6.png','assets/7.png','assets/8.png'];
- List<Widget> imageSliders=[];
- @override
-  void initState() {
-     imageSliders = images
-    .map((item) =>  Container(
-                  height: 170,
-                  width: 140,
-                decoration: BoxDecoration(
-                  color: AppColors.primary,
-                   border: Border.all(color: const Color.fromARGB(255,192,192,192)),
-                    borderRadius: BorderRadius.circular(32)),
-                    child: Image.asset(item,fit: BoxFit.cover,),
-          )
-        )
-    .toList();
-    super.initState();
-  }
+  final pages = List.generate(
+      3,
+      (index) => Container(
+            decoration: BoxDecoration(
+                gradient: const LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [Color.fromARGB(255, 239, 80, 95),Color.fromARGB(255, 133, 43, 51),],
+            ), borderRadius: BorderRadius.circular(10),),
+                child: Stack(
+                  children: [
+                    Positioned(
+                            top: 5,
+                            left: -10,
+                            child: SizedBox(
+                              height: 150,
+                              width: 150,
+                              child: Image.asset('assets/tournament.png')),
+                          ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(32.0),
+                            child: Text('Angular JS',style: HeaderFonts.secondaryHeader,),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Column(
+                                children:  [
+                                  Text('Players in pool:',style: MiniTexts.primaryText,),
+                                  Text('231/350',style: MiniTexts.primaryText,)
+                                ],
+                              ),
+                              Column(
+                                children:  [
+                                  Text('Prize money',style: MiniTexts.primaryText,),
+                                  Text('Rs.500',style: MiniTexts.primaryText,)
+                                ],
+                              )
+                            ],
+                          ),
+                         
+                        ],
+                      ),
+                    ),
+                     
+                  ],
+                ),
+          ));
+
   @override
   Widget build(BuildContext context) {
-    return CarouselSlider(
-            options: CarouselOptions(
-              autoPlay: false,
-              aspectRatio: 1.5,
-              enlargeCenterPage: true,
-            ),
-            items: imageSliders,
-          );
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: SizedBox(
+        height: 200,
+        width: MediaQuery.of(context).size.width*1,
+        child: CarouselSlider(
+          options: CarouselOptions(
+            autoPlay: false,
+            viewportFraction: 0.8,
+            // aspectRatio: 1.9,
+            enlargeCenterPage: true,
+          ),
+          items: pages,
+        ),
+      ),
+    );
   }
 }

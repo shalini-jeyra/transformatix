@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:transformatix_task/styles/styles.dart';
 
+import '../../pages.dart';
+
 class QuizWidget extends StatefulWidget {
   const QuizWidget({
     Key? key,
@@ -29,12 +31,17 @@ class _QuizWidgetState extends State<QuizWidget> {
                 mainAxisSpacing: 20),
           
             itemBuilder: (BuildContext context, index) {
-              return Container(
-                decoration: BoxDecoration(
-                  color: AppColors.primary,
-                   border: Border.all(color: const Color.fromARGB(255,192,192,192)),
-                    borderRadius: BorderRadius.circular(32)),
-                    child: Image.asset(images[index],fit: BoxFit.contain,),
+              return GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>GameMode(),),);
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: AppColors.primary,
+                     border: Border.all(color: const Color.fromARGB(255,192,192,192)),
+                      borderRadius: BorderRadius.circular(32)),
+                      child: Image.asset(images[index],fit: BoxFit.contain,),
+                ),
               );
             }),
       ),

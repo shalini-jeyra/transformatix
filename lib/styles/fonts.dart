@@ -22,12 +22,18 @@ class HeaderFonts {
     color: AppColors.quaternary
   );
    static final secondaryHeader = AppFont.getAppFont(
-    fontSize: 18,
+    fontSize: 28,
     fontWeight: FontWeight.w700,
-    color: AppColors.quaternary
+    color: AppColors.primary
   );
 }
-
+class MiniTexts{
+  static final primaryText = AppFont.getAppFont(
+    fontSize: 18,
+    fontWeight: FontWeight.w500,
+    color: AppColors.primary
+  );
+}
 
 class TextFonts {
   static final primaryText = AppFont.getAppFont(

@@ -1,7 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:transformatix_task/common_widget/clip_widget.dart';
+import 'package:transformatix_task/common_widget/common_widget.dart';
 import 'package:transformatix_task/common_widget/curve.dart';
 import 'package:transformatix_task/pages/home_page/home_page_components/home_page_components.dart';
 import 'package:transformatix_task/pages/home_page/home_page_components/tab_bar.dart';
+import 'package:transformatix_task/pages/home_page/home_page_components/trending_widget.dart';
 import 'package:transformatix_task/styles/styles.dart';
 
 class HomePage extends StatelessWidget {
@@ -10,12 +14,18 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        toolbarHeight: 130,
+        elevation: 0.0,
+        flexibleSpace: ClipWidget(),
+      ),
       body: SafeArea(
         child: Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topCenter,
-              end: Alignment.bottomLeft,
+              end: Alignment.bottomCenter,
               colors: [AppColors.quaternary, AppColors.ternary],
             ),
           ),
@@ -65,20 +75,8 @@ class HomePage extends StatelessWidget {
               ),
               const QuizTypeWidget(),
               const QuizWidget(),
-              Center(
-                child: Text(
-                  'Recently played',
-                  style: HeaderFonts.primaryHeader,
-                ),
-              ),
-              const CarouselWidget(),
-               Center(
-                child: Text(
-                  'Trending tournament',
-                  style: HeaderFonts.primaryHeader,
-                ),
-              ),
-              TabBarWidget(),
+              const BottomCurves(),
+         
             ],
           ),
         ),
@@ -106,3 +104,4 @@ class HomePage extends StatelessWidget {
     ]);
   }
 }
+
