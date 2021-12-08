@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:transformatix_task/pages/home_page/home_page.dart';
+import 'package:transformatix_task/styles/styles.dart';
 
 class BottomNav extends StatefulWidget {
   final int? indexValue;
@@ -52,7 +53,7 @@ class _BottomNavState extends State<BottomNav> {
             highlightColor: Colors.transparent,
           ),
           child: BottomNavigationBar(
-            backgroundColor: Colors.transparent,
+            backgroundColor: AppColors.ternary,
             elevation: 0,
       
             currentIndex: currentTab!,
@@ -84,6 +85,7 @@ class _BottomNavState extends State<BottomNav> {
                 ),
 
                 label:'leaderboard',
+                
               ),
               BottomNavigationBarItem(
                 icon: Image.asset(

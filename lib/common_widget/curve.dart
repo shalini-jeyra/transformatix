@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:transformatix_task/pages/home_page/home_page_components/home_page_components.dart';
+import 'package:transformatix_task/pages/home_page/home_page_components/tab_bar.dart';
 import 'package:transformatix_task/pages/home_page/home_page_components/trending_widget.dart';
 import 'package:transformatix_task/styles/styles.dart';
 
@@ -37,7 +38,7 @@ class BottomCurves extends StatelessWidget {
                 'Leader Board',
                 style: HeaderFonts.primaryHeader,
               ),
-              // TabBarWidget(),
+              TabBarWidget(),
             ],
           ),
         ),

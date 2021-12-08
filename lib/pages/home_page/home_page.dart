@@ -4,8 +4,6 @@ import 'package:transformatix_task/common_widget/clip_widget.dart';
 import 'package:transformatix_task/common_widget/common_widget.dart';
 import 'package:transformatix_task/common_widget/curve.dart';
 import 'package:transformatix_task/pages/home_page/home_page_components/home_page_components.dart';
-import 'package:transformatix_task/pages/home_page/home_page_components/tab_bar.dart';
-import 'package:transformatix_task/pages/home_page/home_page_components/trending_widget.dart';
 import 'package:transformatix_task/styles/styles.dart';
 
 class HomePage extends StatelessWidget {
@@ -15,9 +13,9 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor:Colors.transparent,
         toolbarHeight: 130,
-        elevation: 0.0,
+        elevation:0.0,
         flexibleSpace: ClipWidget(),
       ),
       body: SafeArea(

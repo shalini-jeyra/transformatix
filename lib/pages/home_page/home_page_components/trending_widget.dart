@@ -67,20 +67,17 @@ class _TrendingWidgetState extends State<TrendingWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: SizedBox(
-        height: 200,
-        width: MediaQuery.of(context).size.width*1,
-        child: CarouselSlider(
-          options: CarouselOptions(
-            autoPlay: false,
-            viewportFraction: 0.8,
-            // aspectRatio: 1.9,
-            enlargeCenterPage: true,
-          ),
-          items: pages,
+    return SizedBox(
+      height: 200,
+      width: MediaQuery.of(context).size.width*1,
+      child: CarouselSlider(
+        options: CarouselOptions(
+          autoPlay: false,
+          viewportFraction: 0.8,
+          // aspectRatio: 1.9,
+          enlargeCenterPage: true,
         ),
+        items: pages,
       ),
     );
   }

@@ -18,12 +18,11 @@ class _TabBarWidgetState extends State<TabBarWidget> with TickerProviderStateMix
   }
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 300,
-      width: 500,
-      child: Column(
-        children: [
-          TabBar(
+    return Column(
+      children: [
+        Container(
+          width: MediaQuery.of(context).size.width,
+          child: TabBar(
                     indicatorWeight: 2,
                     overlayColor: MaterialStateProperty.all(Colors.transparent),
                     labelPadding: const EdgeInsets.all(0),
@@ -39,7 +38,7 @@ class _TabBarWidgetState extends State<TabBarWidget> with TickerProviderStateMix
                     ),
                     indicator: const BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(6)),
-                    
+                      color: AppColors.ternary
                     ),
                     tabs: const <Widget>[
                       Tab(
@@ -58,29 +57,39 @@ class _TabBarWidgetState extends State<TabBarWidget> with TickerProviderStateMix
                       ),
                     ],
                   ),
-                  TabBarView(
-                controller: tabController,
-                children: <Widget>[
+        ),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                 height: 50,
+                  color: AppColors.ternary,
+                  child: TabBarView(
+              controller: tabController,
+              children: <Widget>[
                   Container(
                     height: 50,
                     width: 50,
                     color: Colors.black12,
                   ),
                   Container(
-                    height: 50,
+                    height: 100,
                     width: 50,
                     color: Colors.black26,
                   ),
                   Container(
-                    height: 50,
+                    height: 100,
                     width: 50,
-                    color: Colors.black38,
+                    child: Container(
+                     decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(6)),
+                      color: Colors.grey
+                    ),
+                    ),
                   )
-                ],
-              ),
-        ],
-        
-      ),
+              ],
+            ),
+                ),
+      ],
+      
     );
   }
 }

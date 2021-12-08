@@ -1,6 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:transformatix_task/styles/styles.dart';
 
 import 'get_clip.dart';
 
@@ -58,16 +59,16 @@ class _ClipWidgetState extends State<ClipWidget> {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text(
-                        'John Doe',
+                       Text(
+                        'John Doe',style: MiniTexts.secondaryText,
                       ),
                       Row(
-                        children: const [
-                          Icon(
+                        children:  [
+                          const Icon(
                             Icons.star,
                             color: Color(0xff0A69D0),
                           ),
-                          Text('10')
+                          Text('10',style: MiniTexts.secondaryText)
                         ],
                       )
                     ],
@@ -78,7 +79,7 @@ class _ClipWidgetState extends State<ClipWidget> {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Cash mode'),
+                  Text('Cash mode',style: MiniTexts.secondaryText),
                   RotatedBox(
                     quarterTurns: 45,
                     child: CupertinoSwitch(
@@ -92,7 +93,7 @@ class _ClipWidgetState extends State<ClipWidget> {
                       },
                     ),
                   ),
-                  Text('free mode'),
+                  Text('free mode',style: MiniTexts.secondaryText),
                 ],
               ),
               // cash add

@@ -17,8 +17,8 @@ class AppFont {
 
 class HeaderFonts {
   static final primaryHeader = AppFont.getAppFont(
-    fontSize: 31,
-    fontWeight: FontWeight.w700,
+    fontSize: 27,
+    fontWeight: FontWeight.w600,
     color: AppColors.quaternary
   );
    static final secondaryHeader = AppFont.getAppFont(
@@ -30,6 +30,17 @@ class HeaderFonts {
 class MiniTexts{
   static final primaryText = AppFont.getAppFont(
     fontSize: 18,
+    fontWeight: FontWeight.w500,
+    color: AppColors.primary
+  );
+ 
+  static final secondaryText = AppFont.getAppFont(
+    fontSize: 9,
+    fontWeight: FontWeight.bold,
+    color: AppColors.primary
+  );
+   static final ternaryText = AppFont.getAppFont(
+    fontSize: 15,
     fontWeight: FontWeight.w500,
     color: AppColors.primary
   );
